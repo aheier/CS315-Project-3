@@ -88,15 +88,12 @@ namespace Project_3
                 MessageBox.Show($"Unhandled Exception:\n{ex}");
                 return;
             }
-            if (paths.Length == 0)
+            foreach (string item in GetItemsInFolder(path))
             {
-                foreach (string item in GetItemsInFolder(path))
-                {
-                    //MessageBox.Show(item);
-                    ShowFileInfo(item);
-                }
-                return;
+                //MessageBox.Show(item);
+                ShowFileInfo(item);
             }
+            
             foreach (string directory in paths)
             {
                 displayFiles(directory);
